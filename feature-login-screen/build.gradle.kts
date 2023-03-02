@@ -11,6 +11,9 @@ dependencies {
 	//  Koin
 	implementation(Koin.koinCore)
 	implementation(Koin.koinAndroid)
+	//Navigation
+	implementation(Navigation.navFragment)
+	implementation(Navigation.navFragment)
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)
 	androidTestImplementation(Tests.espresso)

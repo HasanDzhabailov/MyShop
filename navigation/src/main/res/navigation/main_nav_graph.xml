@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/sign_in_screen">
+
+    <include app:graph="@navigation/home_screen" />
+    <include app:graph="@navigation/login_screen" />
+    <include app:graph="@navigation/product_details_screen" />
+    <include app:graph="@navigation/profile_screen" />
+    <include app:graph="@navigation/sign_in_screen" />
+</navigation>
