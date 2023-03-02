@@ -11,6 +11,13 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/feature-home-screen" />
+            <option value="$PROJECT_DIR$/feature-login-screen" />
+            <option value="$PROJECT_DIR$/feature-product-details-screen" />
+            <option value="$PROJECT_DIR$/feature-profile-screen" />
+            <option value="$PROJECT_DIR$/feature-sign-in-screen" />
+            <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>
       </GradleProjectSettings>

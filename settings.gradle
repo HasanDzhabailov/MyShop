@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My shop"
 include ':app'
+include ':core'
+include ':feature-home-screen'
+include ':feature-login-screen'
+include ':feature-product-details-screen'
+include ':feature-profile-screen'
+include ':feature-sign-in-screen'
+include ':navigation'
