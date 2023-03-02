@@ -10,13 +10,13 @@ plugins {
 dependencies {
 
 //Module
-//    implementation project(Modules.core)
-//    implementation project(Modules.homeScreen)
-//    implementation project(Modules.productDetails)
-//    implementation project(Modules.signInScreen)
-//    implementation project(Modules.loginScreen)
-//    implementation project(Modules.profileScreen)
-//    implementation project(Modules.navigation)
+    implementation project(Modules.core)
+    implementation project(Modules.homeScreen)
+    implementation project(Modules.productDetails)
+    implementation project(Modules.signInScreen)
+    implementation project(Modules.loginScreen)
+    implementation project(Modules.profileScreen)
+    implementation project(Modules.navigation)
 
     //Kotlin
     implementation Kotlin.core
