@@ -9,9 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="header_text">#161826</color>
-    <color name="silver_text">#808080</color>
+    <color name="silver">#808080</color>
     <color name="blue_login_text">#254FE6</color>
     <color name="btn_blue">#4E55D7</color>
     <color name="placeholder_silver">#7B7B7B</color>
     <color name="text_in_blue_background">#EAEAEA</color>
+
 </resources>
