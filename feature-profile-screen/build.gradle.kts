@@ -14,6 +14,7 @@ dependencies {
 	//Navigation
 	implementation(Navigation.navFragment)
 	implementation(Navigation.navFragment)
+	//Test
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)
 	androidTestImplementation(Tests.espresso)

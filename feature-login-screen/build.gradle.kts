@@ -4,6 +4,8 @@ plugins {
 }
 
 dependencies {
+	//module
+	implementation(project(Modules.core))
 
 	implementation(Kotlin.core)
 	implementation(Design.appCompat)
@@ -14,6 +16,9 @@ dependencies {
 	//Navigation
 	implementation(Navigation.navFragment)
 	implementation(Navigation.navFragment)
+	//Fragment
+	implementation(FragmentKtxLibrary.fragmentKtxLibrary)
+	//Test
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)
 	androidTestImplementation(Tests.espresso)
