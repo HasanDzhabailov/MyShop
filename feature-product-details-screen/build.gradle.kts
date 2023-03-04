@@ -4,6 +4,8 @@ plugins {
 }
 
 dependencies {
+	//module
+	implementation(project(Modules.core))
 
 	implementation(Kotlin.core)
 	implementation(Design.appCompat)
