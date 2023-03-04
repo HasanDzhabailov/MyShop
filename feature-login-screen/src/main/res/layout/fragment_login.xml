@@ -11,11 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="123dp"
+        android:layout_marginTop="132dp"
         android:fontFamily="@font/montserrat_medium_500"
         android:text="@string/welcome_back"
         android:textColor="@color/header_text"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="@+id/inputFirstName"
+        app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="@+id/inputFirstName"
         app:layout_constraintTop_toTopOf="parent" />
 

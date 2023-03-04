@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">48dp</item>
+        <item name="android:height">48dp</item>
+        <item name="android:color">@color/custom_indicator</item>
+    </style>
+    <style name="ThemeBottomNavigation" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSurface">@color/white</item>
+        <item name="colorSecondaryContainer">@color/bottom_navigation_color</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Trade by bata</string>
+    <string name="profile">Profile</string>
+    <string name="favorite">Favorite</string>
+    <string name="cart">Cart</string>
+    <string name="chat">Chat</string>
+</resources>

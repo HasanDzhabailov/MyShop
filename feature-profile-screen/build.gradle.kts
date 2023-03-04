@@ -4,16 +4,20 @@ plugins {
 }
 
 dependencies {
+	//module
+	implementation(project(Modules.core))
 
 	implementation(Kotlin.core)
 	implementation(Design.appCompat)
 	implementation(Design.material)
-	//  Koin
+	// Koin
 	implementation(Koin.koinCore)
 	implementation(Koin.koinAndroid)
 	//Navigation
 	implementation(Navigation.navFragment)
 	implementation(Navigation.navFragment)
+	//Fragment
+	implementation(FragmentKtxLibrary.fragmentKtxLibrary)
 	//Test
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)
