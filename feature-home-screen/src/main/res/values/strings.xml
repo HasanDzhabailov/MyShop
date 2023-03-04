@@ -1,0 +1,50 @@
+<resources>
+    <!--HOME-->
+    <string name="label_price_latest">$ %1$s</string>
+    <string name="label_discount">%1$s%% off</string>
+    <string name="hint_search">What are you looking for?</string>
+    <string name="search">Search</string>
+    <string name="error_list_category">Error list category: %1$s</string>
+    <string name="error_latest_products">Error latest products: %1$s</string>
+    <string name="error_sale_products">Error sale products: %1$s</string>
+    <string name="error_brands">Error brands: %1$s</string>
+
+    <!--LIST CATEGORIES-->
+    <string name="phones">Phones</string>
+    <string name="headphones">Headphones</string>
+    <string name="games">Games</string>
+    <string name="cars">Cars</string>
+    <string name="furniture">Furniture</string>
+    <string name="kids">Kids</string>
+
+    <!--ITEMS BOTTOM MENU-->
+    <string name="home">Trade by bata</string>
+    <string name="trade_by">Trade by</string>
+    <string name="bata">bata</string>
+    <string name="favorite">Favorite</string>
+    <string name="cart">Cart</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="latest">Latest</string>
+    <string name="flash_sale">Flash sale</string>
+    <string name="brands">Brands</string>
+    <string name="add_favorite">Add favorite</string>
+
+    <!--CONTENT DESCRIPTION-->
+    <string name="cd_sign_in_google">Icon sign in with google</string>
+    <string name="cd_sign_in_apple">Icon sign in with apple</string>
+    <string name="cd_item_category">Item category</string>
+    <string name="cd_add_item">Add item</string>
+    <string name="cd_add_product">Add product</string>
+    <string name="cd_image_product">Image product</string>
+    <string name="cd_image_brands">Image brands</string>
+    <string name="cd_trade_store">Trade store</string>
+    <string name="cd_payment_method">Payment method</string>
+    <string name="cd_balance">Balance</string>
+    <string name="cd_trade_history">Trade history</string>
+    <string name="cd_restore_purchase">Restore purchase</string>
+    <string name="cd_help">Help</string>
+    <string name="cd_log_out">Log out</string>
+</resources>
