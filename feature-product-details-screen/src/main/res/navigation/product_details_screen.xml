@@ -9,5 +9,9 @@
         android:id="@+id/productDetailsFragment"
         android:name="com.example.feature_product_details_screen.presentation.ProductDetailsFragment"
         android:label="fragment_product_details"
-        tools:layout="@layout/fragment_product_details" />
+        tools:layout="@layout/fragment_product_details">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="@string/product_details_screen" />
+    </fragment>
 </navigation>

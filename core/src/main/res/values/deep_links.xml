@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_in_screen">my-shop://example.google.app/sign_in_screen</string>
+    <string name="login_screen">my-shop://example.google.app/login_screen</string>
+    <string name="home_screen">my-shop://example.google.app/home_screen</string>
+    <string name="profile_screen">my-shop://example.google.app/profile_screen</string>
+    <string name="product_details_screen">my-shop://example.google.app/product_details_screen</string>
+</resources>

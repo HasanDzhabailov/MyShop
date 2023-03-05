@@ -87,6 +87,7 @@ object Lifecycle {
 }
 
 object Modules {
+	const val app = ":app"
 	const val core = ":core"
 	const val homeScreen = ":feature-home-screen"
 	const val productDetails = ":feature-product-details-screen"

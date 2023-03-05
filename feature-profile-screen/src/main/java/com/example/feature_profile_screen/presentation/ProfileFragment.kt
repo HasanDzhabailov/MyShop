@@ -1,22 +1,25 @@
 package com.example.feature_profile_screen.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import com.example.feature_profile_screen.R
+import com.example.core.common.BaseFragment
+import com.example.core.navigation_to_sreen.navigateToDeepLink
+import com.example.feature_profile_screen.databinding.FragmentProfileBinding
+
+import com.example.core.R.string as coreString
 
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+		with(binding){
+			llLogout.setOnClickListener {
+				navigateToDeepLink(getString(coreString.sign_in_screen),this@ProfileFragment)
 
 
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?,
-		savedInstanceState: Bundle?,
-	): View? {
-		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_profile, container, false)
+			}
+		}
 	}
 
 

@@ -9,5 +9,9 @@
         android:id="@+id/signInFragment"
         android:name="com.example.feature_sign_in_screen.presentation.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="@string/sign_in_screen" />
+    </fragment>
 </navigation>

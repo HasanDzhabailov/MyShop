@@ -16,6 +16,8 @@ dependencies {
 	//Navigation
 	implementation(Navigation.navFragment)
 	implementation(Navigation.navFragment)
+	//Fragment
+	implementation(FragmentKtxLibrary.fragmentKtxLibrary)
 	//Test
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)
