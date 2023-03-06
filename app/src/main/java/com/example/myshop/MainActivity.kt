@@ -15,19 +15,12 @@ class MainActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-
-		findViewById<BottomNavigationView>(R.id.bottom_navigation_view).setOnItemSelectedListener(
+		val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
+		bottomNav.selectedItemId = navModule.profile_screen
+		bottomNav.setOnItemSelectedListener(
 			NavigationBarView.OnItemSelectedListener {
 
 				when (it.itemId) {
-					navModule.home_screen -> {
-						navigateBottomToDeepLink(
-							getString(com.example.core.R.string.home_screen),
-							this,
-							R.id.main_nav_graph
-						)
-						return@OnItemSelectedListener true
-					}
 					navModule.profile_screen -> {
 						navigateBottomToDeepLink(
 							getString(com.example.core.R.string.profile_screen),
@@ -36,6 +29,16 @@ class MainActivity : AppCompatActivity() {
 						)
 						return@OnItemSelectedListener true
 					}
+
+					navModule.home_screen -> {
+						navigateBottomToDeepLink(
+							getString(com.example.core.R.string.home_screen),
+							this,
+							R.id.main_nav_graph
+						)
+						return@OnItemSelectedListener true
+					}
+
 				}
 				false
 			})
