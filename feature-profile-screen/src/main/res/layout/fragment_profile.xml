@@ -207,6 +207,7 @@
                 android:layout_height="40dp"
                 android:padding="12dp"
                 android:src="@drawable/ic_right"
+                android:text="$ 1593"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 tools:text="$ 1593" />
