@@ -1,7 +1,7 @@
 package com.example.feature_sign_in_screen.di
 
-import com.example.core.local.UsersAccountsDao
-import com.example.core.local.UsersDatabase
+import com.example.core.database.UsersAccountsDao
+import com.example.core.database.UsersDatabase
 import com.example.feature_sign_in_screen.data.repository.SignInRepositoryImpl
 import com.example.feature_sign_in_screen.domain.repository.SignInRepository
 import com.example.feature_sign_in_screen.domain.use_case.CheckAuthUserUseCase

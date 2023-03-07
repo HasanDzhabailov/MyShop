@@ -26,6 +26,9 @@ class SignInViewModel(
 		viewModelScope.launch(Dispatchers.Main ) {
 		_isUserAuth.value =	checkAuthUserUseCase(email)!!
 		}
+	fun saveEmailUser(email:String){
+
+	}
 
 	}
 

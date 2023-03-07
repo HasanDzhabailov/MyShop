@@ -1,4 +1,4 @@
-package com.example.core.local
+package com.example.core.database
 
 import androidx.room.*
 
@@ -7,6 +7,8 @@ import androidx.room.*
 interface UsersAccountsDao {
 	@Query("SELECT * FROM users_accounts_table WHERE email=:email ")
 	suspend fun checkAuthUser(email:String): List<UserAccountDB>
+	@Query("SELECT * FROM users_accounts_table WHERE email=:password AND firstName=:firstName ")
+	suspend fun checkLoginIn(firstName:String,password:String): List<UserAccountDB>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun createUserAccount(UsersAccounts: UserAccountDB)

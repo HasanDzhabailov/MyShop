@@ -1,6 +1,6 @@
 package com.example.feature_sign_in_screen.data.mapper
 
-import com.example.core.local.UserAccountDB
+import com.example.core.database.UserAccountDB
 import com.example.feature_sign_in_screen.domain.model.UsersAccount
 
 

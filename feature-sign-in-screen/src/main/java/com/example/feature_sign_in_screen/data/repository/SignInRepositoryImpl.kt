@@ -1,8 +1,8 @@
 package com.example.feature_sign_in_screen.data.repository
 
 
-import com.example.core.local.UserAccountDB
-import com.example.core.local.UsersAccountsDao
+import com.example.core.database.UserAccountDB
+import com.example.core.database.UsersAccountsDao
 import com.example.feature_sign_in_screen.domain.model.UsersAccount
 import com.example.feature_sign_in_screen.domain.repository.SignInRepository
 
