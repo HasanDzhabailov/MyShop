@@ -11,37 +11,34 @@ import com.google.android.material.navigation.NavigationBarView
 import com.example.navigation.R.id as navModule
 
 class MainActivity : AppCompatActivity() {
-
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 		val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
 		bottomNav.selectedItemId = navModule.profile_screen
-		bottomNav.setOnItemSelectedListener(
-			NavigationBarView.OnItemSelectedListener {
+		bottomNav.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener {
 
-				when (it.itemId) {
-					navModule.profile_screen -> {
-						navigateBottomToDeepLink(
-							getString(com.example.core.R.string.profile_screen),
-							this,
-							R.id.main_nav_graph
-						)
-						return@OnItemSelectedListener true
-					}
-
-					navModule.home_screen -> {
-						navigateBottomToDeepLink(
-							getString(com.example.core.R.string.home_screen),
-							this,
-							R.id.main_nav_graph
-						)
-						return@OnItemSelectedListener true
-					}
-
+			when (it.itemId) {
+				navModule.profile_screen -> {
+					navigateBottomToDeepLink(
+						getString(com.example.core.R.string.profile_screen),
+						this,
+						R.id.main_nav_graph
+					)
+					return@OnItemSelectedListener true
 				}
-				false
-			})
+
+				navModule.home_screen -> {
+					navigateBottomToDeepLink(
+						getString(com.example.core.R.string.home_screen),
+						this,
+						R.id.main_nav_graph
+					)
+					return@OnItemSelectedListener true
+				}
+			}
+			false
+		})
 
 		setupNav()
 	}

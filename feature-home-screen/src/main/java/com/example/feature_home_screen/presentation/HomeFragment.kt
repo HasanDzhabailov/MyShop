@@ -1,13 +1,9 @@
 package com.example.feature_home_screen.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.core.common.BaseFragment
 import com.example.core.navigation_to_sreen.navigateToDeepLink
-import com.example.feature_home_screen.R
 import com.example.feature_home_screen.databinding.FragmentHomeBinding
 import com.example.feature_home_screen.domain.model.FlashProduct
 import com.example.feature_home_screen.domain.model.LatestProduct
@@ -17,6 +13,7 @@ import com.example.feature_home_screen.presentation.adapters.latest.LatestProduc
 import com.example.feature_home_screen.presentation.adapters.sale.SaleAdapter
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.example.core.R.string as coreString
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -49,14 +46,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 			rvBrands.adapter = brandsAdapter
 			toolbar.setOnMenuItemClickListener {
 				navigateToDeepLink(
-					getString(com.example.core.R.string.profile_screen),
-					this@HomeFragment
+					getString(com.example.core.R.string.profile_screen), this@HomeFragment
 				)
 				return@setOnMenuItemClickListener true
 			}
-
-
-
 		}
 		homeViewModel.listLatest.observe(viewLifecycleOwner) {
 			checkListLatestProducts(it.latest)
@@ -67,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 		homeViewModel.listCategory.observe(viewLifecycleOwner) {
 			categoryAdapter.submitList(it)
 		}
-		homeViewModel.listBrands.observe(viewLifecycleOwner){
+		homeViewModel.listBrands.observe(viewLifecycleOwner) {
 			brandsAdapter.submitList(it)
 		}
 		homeViewModel.listCategoryError.observe(viewLifecycleOwner) {
@@ -79,8 +72,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 		homeViewModel.listSaleError.observe(viewLifecycleOwner) {
 			binding.root.showSnackbar(it)
 		}
-		homeViewModel.listBrandsError.observe(viewLifecycleOwner){
+		homeViewModel.listBrandsError.observe(viewLifecycleOwner) {
 			binding.root.showSnackbar(it)
+		}
+		saleProductsAdapter.clickItemSaleProduct = {
+			navigateToDeepLink(getString(coreString.product_details_screen), this@HomeFragment)
 		}
 	}
 

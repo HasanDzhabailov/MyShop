@@ -34,5 +34,4 @@ val homeScreenModule = module {
 	}
 }
 
-fun provideHomeService(retrofit: Retrofit): HomeApi =
-	retrofit.create(HomeApi::class.java)
+fun provideHomeService(retrofit: Retrofit): HomeApi = retrofit.create(HomeApi::class.java)

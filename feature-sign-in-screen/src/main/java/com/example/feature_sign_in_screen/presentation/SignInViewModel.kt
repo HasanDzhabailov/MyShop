@@ -1,6 +1,5 @@
 package com.example.feature_sign_in_screen.presentation
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,15 +22,8 @@ class SignInViewModel(
 	}
 
 	fun checkAuthUser(email: String) {
-		viewModelScope.launch(Dispatchers.Main ) {
-		_isUserAuth.value =	checkAuthUserUseCase(email)!!
+		viewModelScope.launch(Dispatchers.Main) {
+			_isUserAuth.value = checkAuthUserUseCase(email)
 		}
-	fun saveEmailUser(email:String){
-
 	}
-
-	}
-
-
-
 }

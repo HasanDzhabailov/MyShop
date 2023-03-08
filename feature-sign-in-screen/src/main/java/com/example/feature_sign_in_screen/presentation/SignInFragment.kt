@@ -36,24 +36,23 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
 									inputEmail.text.toString()
 								)
 							)
-							saveAuthUser(requireContext(),inputEmail.text.toString())
+							saveAuthUser(requireContext(), inputEmail.text.toString())
 							navigateToDeepLink(
 								getString(coreString.profile_screen), this@SignInFragment
 							)
 						} else if (checkAuth && checkToastOneShow == 0) {
-							 Toast.makeText(
-							context,
-							"Этот адрес электронной почты уже используется. Попробуйте другой.",
-							Toast.LENGTH_LONG
-						).show()
-							checkToastOneShow = 1;
-					}
+							Toast.makeText(
+								context,
+								"Этот адрес электронной почты уже используется. Попробуйте другой.",
+								Toast.LENGTH_LONG
+							).show()
+							checkToastOneShow = 1
+						}
 					}
 
 				}
 			}
 		}
-
 
 	}
 

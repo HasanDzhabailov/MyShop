@@ -17,5 +17,6 @@
     <string name="color_selected">Color selected</string>
     <string name="cd_back">Back</string>
     <string name="cd_image_product">Image product</string>
+    <string name="label_price_latest">$ %1$s</string>
 
 </resources>

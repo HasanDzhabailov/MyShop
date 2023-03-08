@@ -11,17 +11,18 @@ import com.example.feature_home_screen.domain.model.ItemCategory
 import com.example.feature_home_screen.domain.model.LatestProductList
 import com.example.feature_home_screen.domain.repository.HomeRepository
 
-class HomeRepositoryImpl(private val homeApi: HomeApi, private val context: Context): HomeRepository {
+class HomeRepositoryImpl(private val homeApi: HomeApi, private val context: Context) :
+	HomeRepository {
 	override suspend fun getFlashSaleList(): FlashSaleList {
-		return  homeApi.getSaleFashProducts().body()?.let {flashSaleListDto ->
-		flashSaleListDto.toFlashSaleList()
+		return homeApi.getSaleFashProducts().body()?.let { flashSaleListDto ->
+			flashSaleListDto.toFlashSaleList()
 		} ?: FlashSaleList(listOf())
 	}
 
 	override suspend fun getLatestProducts(): LatestProductList {
 		return homeApi.getLatestProducts().body()?.let { latestProductListDto ->
 			latestProductListDto.toLatestListProduct()
-		}?: LatestProductList(listOf())
+		} ?: LatestProductList(listOf())
 	}
 
 	override fun getCategoryProducts(): List<ItemCategory> {

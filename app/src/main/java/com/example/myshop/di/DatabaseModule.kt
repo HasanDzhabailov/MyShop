@@ -8,9 +8,7 @@ import org.koin.dsl.module
 val databaseModule = module {
 	single {
 		Room.databaseBuilder(
-			androidContext(),
-			UsersDatabase::class.java,
-			"my_shop.db"
+			androidContext(), UsersDatabase::class.java, "my_shop.db"
 		).build()
 	}
 }

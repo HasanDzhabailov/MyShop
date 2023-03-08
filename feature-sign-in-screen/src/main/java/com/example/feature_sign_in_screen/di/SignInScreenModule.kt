@@ -11,16 +11,16 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val signInScreenModule = module {
-	single<UsersAccountsDao>{
+	single<UsersAccountsDao> {
 		val database = get<UsersDatabase>()
 		database.UsersAccountsDao()
 	}
-	single <SignInRepository>{
+	single<SignInRepository> {
 		SignInRepositoryImpl(usersAccountsDao = get())
 	}
 	factory { SignInUseCase(get()) }
 	factory { CheckAuthUserUseCase(get()) }
-	viewModel{
+	viewModel {
 		SignInViewModel(signInUseCase = get(), checkAuthUserUseCase = get())
 	}
 

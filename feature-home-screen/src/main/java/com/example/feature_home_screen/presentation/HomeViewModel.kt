@@ -52,12 +52,11 @@ class HomeViewModel(
 	private fun getLatestProducts() {
 		viewModelScope.launch(Dispatchers.IO) {
 			try {
-				_listLatest.postValue(getLatestProductsUseCase() ?: LatestProductList(listOf()))
+				_listLatest.postValue(getLatestProductsUseCase())
 			} catch (e: Exception) {
 				_listLatestError.postValue(
 					String.format(
-						context.getString(R.string.error_latest_products),
-						e.message
+						context.getString(R.string.error_latest_products), e.message
 					)
 				)
 			}
@@ -70,8 +69,7 @@ class HomeViewModel(
 			_listCategory.value = getCategoryProductsUseCase()
 		} catch (e: Exception) {
 			_listCategoryError.value = String.format(
-				context.getString(R.string.error_list_category),
-				e.message
+				context.getString(R.string.error_list_category), e.message
 			)
 		}
 
@@ -87,12 +85,11 @@ class HomeViewModel(
 	private fun getFlashSaleProducts() {
 		viewModelScope.launch(Dispatchers.IO) {
 			try {
-				_listSale.postValue(getFlashSaleProductsUseCase() ?: FlashSaleList(listOf()))
+				_listSale.postValue(getFlashSaleProductsUseCase())
 			} catch (e: Exception) {
 				_listSaleError.postValue(
 					String.format(
-						context.getString(R.string.error_sale_products),
-						e.message
+						context.getString(R.string.error_sale_products), e.message
 					)
 				)
 			}
@@ -105,8 +102,7 @@ class HomeViewModel(
 			_listBrands.value = getBrandsUseCase()
 		} catch (e: Exception) {
 			_listBrandsError.value = String.format(
-				context.getString(R.string.error_brands),
-				e.message
+				context.getString(R.string.error_brands), e.message
 			)
 		}
 	}

@@ -16,10 +16,7 @@ val apiModule = module {
 		OkHttpClient.Builder().addInterceptor(get() as HttpLoggingInterceptor).build()
 	}
 	single {
-		Retrofit.Builder()
-			.client(get())
-			.addConverterFactory(GsonConverterFactory.create())
-			.baseUrl("https://run.mocky.io/v3/")
-			.build()
+		Retrofit.Builder().client(get()).addConverterFactory(GsonConverterFactory.create())
+			.baseUrl("https://run.mocky.io/v3/").build()
 	}
 }

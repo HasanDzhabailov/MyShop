@@ -48,7 +48,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 	}
 
 	private fun setData(account: UserAccountDB) {
-		binding.tvNameProfile.text = account.firstName + " "+(account.lastName)
+		binding.tvNameProfile.text = account.firstName + " " + (account.lastName)
 	}
 
 }

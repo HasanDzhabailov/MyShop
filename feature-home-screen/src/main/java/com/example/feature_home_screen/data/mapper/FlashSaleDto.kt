@@ -1,9 +1,7 @@
-
 package com.example.feature_home_screen.data.mapper
 
 import com.example.feature_home_screen.domain.model.FlashProduct
 import com.google.gson.annotations.SerializedName
-
 
 
 data class FlashSaleDto(
@@ -16,13 +14,13 @@ data class FlashSaleDto(
     @SerializedName("name")
     val name: String,
     @SerializedName("price")
-    val price: Double
+    val price: Double,
 )
 
-fun FlashSaleDto.toFlashProduct():FlashProduct = FlashProduct(
-    category = category,
-    discount = discount,
-    image_url = image_url,
-    name = name,
-    price = price
+fun FlashSaleDto.toFlashProduct(): FlashProduct = FlashProduct(
+	category = category,
+	discount = discount,
+	image_url = image_url,
+	name = name,
+	price = price
 )

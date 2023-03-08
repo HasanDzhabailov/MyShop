@@ -16,6 +16,13 @@ dependencies {
 	//Navigation
 	implementation(Navigation.navFragment)
 	implementation(Navigation.navFragment)
+	//Retrofit
+	implementation(Retrofit.retrofit)
+	implementation(Retrofit.converterGson)
+	implementation(Retrofit.gson)
+	// Glide
+	implementation(Glide.glide)
+	implementation(Glide.glideCompiler)
 	//Test
 	testImplementation(Tests.junit)
 	androidTestImplementation(Tests.ext)

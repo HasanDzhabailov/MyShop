@@ -7,9 +7,10 @@ import androidx.room.*
 @Dao
 interface UsersAccountsDao {
 	@Query("SELECT * FROM users_accounts_table WHERE email=:email ")
-	suspend fun checkAuthUser(email:String): List<UserAccountDB>
+	suspend fun checkAuthUser(email: String): List<UserAccountDB>
+
 	@Query("SELECT * FROM users_accounts_table WHERE email=:password AND firstName=:firstName ")
-	suspend fun checkLoginIn(firstName:String,password:String): List<UserAccountDB>
+	suspend fun checkLoginIn(firstName: String, password: String): List<UserAccountDB>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun createUserAccount(UsersAccounts: UserAccountDB)
@@ -19,6 +20,7 @@ interface UsersAccountsDao {
 
 	@Delete
 	suspend fun deleteUser(accountDbModel: UserAccountDB)
+
 	@Query("SELECT * FROM users_accounts_table WHERE email LIKE '%' || :email || '%'")
 	fun checkEmail(email: String): LiveData<UserAccountDB?>
 }

@@ -5,8 +5,8 @@ import com.example.feature_home_screen.domain.model.LatestProductList
 import com.google.gson.annotations.SerializedName
 
 data class LatestProductListDto(
-    @SerializedName("latest")
-    val latest: List<LatestProductDto>,
+	@SerializedName("latest")
+	val latest: List<LatestProductDto>,
 )
 
 fun LatestProductListDto.toLatestListProduct(): LatestProductList = LatestProductList(

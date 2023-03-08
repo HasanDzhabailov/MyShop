@@ -12,13 +12,13 @@ data class LatestProductDto(
     @SerializedName("name")
     val name: String,
     @SerializedName("price")
-    val price: Int
+    val price: Int,
 )
 
 fun LatestProductDto.toLatestProduct(): LatestProduct = LatestProduct(
-    category = category,
-    image_urls = image_url,
-    name = name,
-    price = price,
-    id = UUID.randomUUID()
+	category = category,
+	image_urls = image_url,
+	name = name,
+	price = price,
+	id = UUID.randomUUID()
 )
