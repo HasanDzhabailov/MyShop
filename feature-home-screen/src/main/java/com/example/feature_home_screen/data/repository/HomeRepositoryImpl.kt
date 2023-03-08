@@ -6,6 +6,7 @@ import com.example.feature_home_screen.data.mapper.toFlashSaleList
 import com.example.feature_home_screen.data.mapper.toLatestListProduct
 import com.example.feature_home_screen.data.network.HomeApi
 import com.example.feature_home_screen.domain.model.FlashSaleList
+import com.example.feature_home_screen.domain.model.ItemBrand
 import com.example.feature_home_screen.domain.model.ItemCategory
 import com.example.feature_home_screen.domain.model.LatestProductList
 import com.example.feature_home_screen.domain.repository.HomeRepository
@@ -42,5 +43,13 @@ class HomeRepositoryImpl(private val homeApi: HomeApi, private val context: Cont
 		)
 		listCategories.add(ItemCategory(context.getString(R.string.kids), R.drawable.ic_kids))
 		return listCategories
+	}
+
+	override fun getBrands(): List<ItemBrand> {
+		val listBrand = arrayListOf<ItemBrand>()
+		listBrand.add(ItemBrand(R.drawable.ic_chanel_brend))
+		listBrand.add(ItemBrand(R.drawable.ic_calvin_klein_brend))
+		listBrand.add(ItemBrand(R.drawable.ic_hugo_boss_brend))
+		return listBrand
 	}
 }

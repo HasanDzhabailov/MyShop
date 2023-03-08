@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.feature_home_screen.data.network.HomeApi
 import com.example.feature_home_screen.data.repository.HomeRepositoryImpl
 import com.example.feature_home_screen.domain.repository.HomeRepository
+import com.example.feature_home_screen.domain.use_case.GetBrandsUseCase
 import com.example.feature_home_screen.domain.use_case.GetCategoryProductsUseCase
 import com.example.feature_home_screen.domain.use_case.GetFlashSaleProductsUseCase
 import com.example.feature_home_screen.domain.use_case.GetLatestProductsUseCase
@@ -20,12 +21,14 @@ val homeScreenModule = module {
 	factory { GetFlashSaleProductsUseCase(get()) }
 	factory { GetLatestProductsUseCase(get()) }
 	factory { GetCategoryProductsUseCase(get()) }
+	factory { GetBrandsUseCase(get()) }
 
 	viewModel {
 		HomeViewModel(
 			getFlashSaleProductsUseCase = get(),
 			getLatestProductsUseCase = get(),
 			getCategoryProductsUseCase = get(),
+			getBrandsUseCase = get(),
 			application = androidApplication()
 		)
 	}

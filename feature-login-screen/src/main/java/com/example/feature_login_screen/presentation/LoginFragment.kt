@@ -10,6 +10,7 @@ import android.widget.Toast
 
 import com.example.core.R.string as coreString
 import com.example.core.common.BaseFragment
+import com.example.core.database.saveAuthUser
 import com.example.core.navigation_to_sreen.navigateToDeepLink
 import com.example.feature_login_screen.databinding.FragmentLoginBinding
 
@@ -33,6 +34,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 					if(isLogin)	checkLogin =isLogin
 					Log.d("ddd1",isLogin.toString())
 					if (isValidate && checkLogin) {
+						saveAuthUser(requireContext(),editPass.text.toString())
 						navigateToDeepLink(getString(coreString.profile_screen), this@LoginFragment)
 						checkLogin =false
 					} else if(!checkLogin) Toast.makeText(context, "Неверно введен пароль/логин", Toast.LENGTH_LONG)

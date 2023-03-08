@@ -4,8 +4,10 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.feature_home_screen.R
 import com.example.feature_home_screen.domain.model.FlashSaleList
+import com.example.feature_home_screen.domain.model.ItemBrand
 import com.example.feature_home_screen.domain.model.ItemCategory
 import com.example.feature_home_screen.domain.model.LatestProductList
+import com.example.feature_home_screen.domain.use_case.GetBrandsUseCase
 import com.example.feature_home_screen.domain.use_case.GetCategoryProductsUseCase
 import com.example.feature_home_screen.domain.use_case.GetFlashSaleProductsUseCase
 import com.example.feature_home_screen.domain.use_case.GetLatestProductsUseCase
@@ -17,9 +19,10 @@ class HomeViewModel(
 	private val getLatestProductsUseCase: GetLatestProductsUseCase,
 	private val getFlashSaleProductsUseCase: GetFlashSaleProductsUseCase,
 	private val getCategoryProductsUseCase: GetCategoryProductsUseCase,
+	private val getBrandsUseCase: GetBrandsUseCase,
 	application: Application,
 
-): AndroidViewModel(application) {
+	) : AndroidViewModel(application) {
 	private val context = application
 
 	private var _listCategory = MutableLiveData<List<ItemCategory>>()
@@ -40,6 +43,12 @@ class HomeViewModel(
 	private var _listSaleError = MutableLiveData<String>()
 	val listSaleError: LiveData<String> = _listSaleError
 
+	private var _listBrands = MutableLiveData<List<ItemBrand>>()
+	val listBrands: LiveData<List<ItemBrand>> = _listBrands
+
+	private var _listBrandsError = MutableLiveData<String>()
+	val listBrandsError: LiveData<String> = _listBrandsError
+
 	private fun getLatestProducts() {
 		viewModelScope.launch(Dispatchers.IO) {
 			try {
@@ -55,6 +64,7 @@ class HomeViewModel(
 
 		}
 	}
+
 	private fun getCategories() {
 		try {
 			_listCategory.value = getCategoryProductsUseCase()
@@ -71,7 +81,9 @@ class HomeViewModel(
 		getLatestProducts()
 		getFlashSaleProducts()
 		getCategories()
+		getBrands()
 	}
+
 	private fun getFlashSaleProducts() {
 		viewModelScope.launch(Dispatchers.IO) {
 			try {
@@ -85,6 +97,17 @@ class HomeViewModel(
 				)
 			}
 
+		}
+	}
+
+	private fun getBrands() {
+		try {
+			_listBrands.value = getBrandsUseCase()
+		} catch (e: Exception) {
+			_listBrandsError.value = String.format(
+				context.getString(R.string.error_brands),
+				e.message
+			)
 		}
 	}
 

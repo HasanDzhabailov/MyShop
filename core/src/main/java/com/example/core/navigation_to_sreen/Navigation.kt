@@ -2,8 +2,6 @@ package com.example.core.navigation_to_sreen
 
 import android.R
 import android.app.Activity
-import android.util.Log
-import android.view.View
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDeepLinkRequest
@@ -17,6 +15,8 @@ fun navigateToDeepLink(deepLink: String, fragment: Fragment) {
 		.build()
 	findNavController(fragment).navigate(request)
 }
+
+
 
 fun navigateBottomToDeepLink(deepLink: String, activity: Activity,view:Int) {
 

@@ -1,5 +1,6 @@
 package com.example.core.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 
@@ -17,5 +18,7 @@ interface UsersAccountsDao {
 	suspend fun uploadPhoto(UsersAccounts: UserAccountDB)
 
 	@Delete
-	suspend fun removeUser(accountDbModel: UserAccountDB)
+	suspend fun deleteUser(accountDbModel: UserAccountDB)
+	@Query("SELECT * FROM users_accounts_table WHERE email LIKE '%' || :email || '%'")
+	fun checkEmail(email: String): LiveData<UserAccountDB?>
 }

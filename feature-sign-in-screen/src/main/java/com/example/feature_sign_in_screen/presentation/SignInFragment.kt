@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 
 import com.example.core.common.BaseFragment
+import com.example.core.database.saveAuthUser
 import com.example.core.navigation_to_sreen.navigateToDeepLink
 import com.example.feature_sign_in_screen.databinding.FragmentSignInBinding
 import com.example.feature_sign_in_screen.domain.model.UsersAccount
@@ -35,6 +36,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
 									inputEmail.text.toString()
 								)
 							)
+							saveAuthUser(requireContext(),inputEmail.text.toString())
 							navigateToDeepLink(
 								getString(coreString.profile_screen), this@SignInFragment
 							)
