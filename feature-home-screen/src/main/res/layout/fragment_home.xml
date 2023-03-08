@@ -12,6 +12,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/back_fragments"
+            android:theme="@style/Theme.MyShop.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/back_fragments"
+                android:gravity="center_horizontal"
+                android:theme="@style/Theme.MyShop.PopupOverlay"
+                app:menu="@menu/menu_toolbar"
+                app:navigationIcon="@drawable/menu_draw"
+                app:title="@string/home"
+                app:titleCentered="true"
+                app:titleTextColor="@color/black">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/toolbar_search"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/back_search"
+                android:focusable="false"
+                android:imeOptions="actionSearch"
+                android:layoutDirection="rtl"
+                android:textColor="#5B5B5B"
+                android:textStyle="bold"
+                android:theme="@style/ThemeOverlay.Toolbar"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/hint_search"
+                app:searchIcon="@drawable/ic_search"
+                app:showDividers="end"
+                tools:ignore="SmallSp" />
+
+        </com.google.android.material.appbar.AppBarLayout>
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_start"
             android:layout_width="0dp"
@@ -31,12 +78,12 @@
             android:id="@+id/rv_categories"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar"
             tools:listitem="@layout/item_category" />
 
         <TextView
@@ -88,29 +135,6 @@
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_flash_sale"
             tools:listitem="@layout/item_sale" />
-
-        <TextView
-            android:id="@+id/tv_brands"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/brands"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/rv_flash_sale" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_brands"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/tv_brands"
-            tools:listitem="@layout/item_brands" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
